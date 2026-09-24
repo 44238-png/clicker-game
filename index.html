@@ -67,6 +67,8 @@
     <script>
         let speler = document.getElementById("speler");
 
+        let score = 0;
+
         let x = 100;
         let y = 100;
 
@@ -87,6 +89,8 @@
             if (event.key === "ArrowDown") {
                 y += 10;
             }
+
+            if (event.key === " ") {
 
             speler.style.left = x + "px";
             speler.style.top = y + "px";
