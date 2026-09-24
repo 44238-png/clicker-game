@@ -91,6 +91,9 @@
             }
 
             if (event.key === " ") {
+                score += 1;
+                document.getElementById("score").innerText = "Score: " + score;
+            }
 
             speler.style.left = x + "px";
             speler.style.top = y + "px";
