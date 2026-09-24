@@ -2,23 +2,87 @@
 <html lang="nl">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Mijn game</title>
-  <style>
-    #speler {
-      width: 50px;
-      height: 50px;
-      background-color: blue;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Game</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #222;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        #game {
+            width: 100vw;
+            height: 100vh;
+            background-color: #5dbb63;
+            position: relative;
+        }
+
+        #speler {
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+        #score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+            z-index: 10;
+        }
     </style>
 </head>
 
-  <body>
+<body>
 
-    <h1>Mijn game</h1>
-    <div id="speler"></div>
+    <div id="game">
 
-  </body>
-</script>
-  const speler = document.getElementById("speler")
+        <div id="score">
+            Score: 0
+        </div>
+
+        <div id="speler"></div>
+
+    </div>
+
+    <script>
+        let speler = document.getElementById("speler");
+
+        let x = 100;
+        let y = 100;
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "ArrowRight") {
+                x += 10;
+            }
+
+            if (event.key === "ArrowLeft") {
+                x -= 10;
+            }
+
+            if (event.key === "ArrowUp") {
+                y -= 10;
+            }
+
+            if (event.key === "ArrowDown") {
+                y += 10;
+            }
+
+            speler.style.left = x + "px";
+            speler.style.top = y + "px";
+
+        });
+    </script>
+
+</body>
+
 </html>
